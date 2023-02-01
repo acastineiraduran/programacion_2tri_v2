@@ -5,6 +5,7 @@
 package exemploarraylist;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 
 /**
@@ -85,5 +86,17 @@ public class ListaEnteiros {
             if ((int)it.next()==elemento)
                 it.remove();
     }
+    
+    // OTROS METODOS DE NINA:...
+    
+    public void ordenar (){
+        // Collections.sort(listaEnteiros,Collections.reverseOrder()); // lo ordena al reves
+        Collections.sort(listaEnteiros);
+    }
+    
+    public void borrar2 () {
+        listaEnteiros.remove(Integer.valueOf(5));
+    }
+    
 
 }
