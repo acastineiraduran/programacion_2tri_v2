@@ -15,6 +15,9 @@ public class Boletin24 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+    Libro libro = new Libro("angel", "ppp", "434jfrfi", 3.4f);
+    
+    
     }
     
 }

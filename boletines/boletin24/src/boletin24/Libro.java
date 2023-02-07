@@ -8,7 +8,7 @@ package boletin24;
  *
  * @author dam1
  */
-public class Libro {
+public class Libro extends Libreria{
 
     public static int getNumUni() {
         return numUni;
@@ -28,6 +28,7 @@ public class Libro {
         this.autor = autor;
         this.isbn = isbn;
         this.prezo = prezo;
+        numUni = numUni + 1;
     }
 
     public String getTitulo() {
@@ -61,6 +62,21 @@ public class Libro {
     public void setPrezo(float prezo) {
         this.prezo = prezo;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Libro{");
+        sb.append("titulo=").append(titulo);
+        sb.append(", autor=").append(autor);
+        sb.append(", isbn=").append(isbn);
+        sb.append(", prezo=").append(prezo);
+        sb.append('}');
+        return sb.toString();
+    }
+
+    
+    
     
     
     
