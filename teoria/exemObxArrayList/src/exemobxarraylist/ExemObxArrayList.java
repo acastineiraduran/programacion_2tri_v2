@@ -23,7 +23,8 @@ public class ExemObxArrayList {
         int opcion;
         do {
              opcion = PedirDatos.pedirInt("\"***MENU***:\n1--> "
-                + "Engadir xogador\n2--> Amosar\n3--> Buscar\n4--> Eliminar\nTeclar una opcion");
+                + "Engadir xogador\n2--> Amosar\n3--> Buscar\n4--> Eliminar"
+                     + "\n5--> Ordenar por dorsal\n6--> Ordenar por nome\nTeclar una opcion");
             switch (opcion) {
                 case 1:
                     obx.engadir(listXog);
@@ -38,6 +39,9 @@ public class ExemObxArrayList {
                     // metodo un poco absurdo porque tienes que introducir dorsal y nombre
                     obx.eliminar(listXog, "Dorsal do xogador a eliminar");
                     break;
+                case 5: obx.ordenar(listXog);
+                    break;
+                    
                 default: System.out.println("Opcion incorrecta");
                 
                 

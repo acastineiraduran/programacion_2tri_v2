@@ -8,7 +8,7 @@ package exemobxarraylist;
  *
  * @author dam1
  */
-public class Xogador {
+public class Xogador implements Comparable{
     private String nome;
     private int dorsal;
 
@@ -42,6 +42,32 @@ public class Xogador {
         sb.append('}');
         return sb.toString();
     }
+   
+
+//    @Override
+//    public int compareTo(Object o) {
+//        //hrow new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//        Xogador x = (Xogador)o;
+//        if(this.dorsal > x.dorsal)
+//            return 1;
+//        else if (this.dorsal < x.dorsal)
+//            return -1;
+//        else
+//            return 0;
+//    }
+
+    @Override
+    public int compareTo(Object o) {
+        Xogador x = (Xogador)o; // casteamos
+        if (this.nome.compareToIgnoreCase(x.nome) > 0)
+            return 1;
+        else if (this.nome.compareToIgnoreCase(x.nome) < 0)
+            return -1;
+        else
+            return 0;
+    }
+    
+    
     
     
     

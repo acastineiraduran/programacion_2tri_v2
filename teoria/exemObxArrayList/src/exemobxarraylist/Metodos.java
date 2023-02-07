@@ -5,6 +5,7 @@
 package exemobxarraylist;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import nosaLibreria.PedirDatos;
 
@@ -87,6 +88,12 @@ public class Metodos {
             }
         }
 
+    }
+    
+    
+    
+    public void ordenar (ArrayList<Xogador>lista){
+        Collections.sort(lista);
     }
 
 }
