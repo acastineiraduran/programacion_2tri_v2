@@ -14,9 +14,6 @@ public class Libro extends Libreria{
         return numUni;
     }
 
-    public static void setNumUni(int aNumUni) {
-        numUni = aNumUni;
-    }
     private String titulo;
     private String autor;
     private String isbn;
