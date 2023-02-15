@@ -4,7 +4,6 @@
  */
 package boletin26;
 
-import com.nicosteuerberg.datos.PedirDatos;
 import java.util.ArrayList;
 
 /**
