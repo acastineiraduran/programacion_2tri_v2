@@ -5,7 +5,7 @@
 package boletin26;
 
 import java.util.ArrayList;
-
+import nosaLibreria.PedirDatos;
 /**
  *
  * @author dam1
@@ -21,10 +21,10 @@ public class Boletin26 {
         int numero;
         ArrayList<Integer> lista= new ArrayList(); 
         do{
-            numero = PedirDatos.getInt("1 --> Añadir\n2 --> Elemento mínimo\n3 --> Elemento máximo\n4 --> Buscar elemento");
+            numero = PedirDatos.pedirInt("1 --> Añadir\n2 --> Elemento mínimo\n3 --> Elemento máximo\n4 --> Buscar elemento");
             switch(numero){
                 case 1:
-                    obx.engadir(PedirDatos.getInt("Teclee un numero"), lista);
+                    obx.engadir(PedirDatos.pedirInt("Teclee un numero"), lista);
                     break;
                 case 2:
                     obx.elementoMinimo(lista);
@@ -33,7 +33,7 @@ public class Boletin26 {
                     obx.elementoMaximo(lista);
                     break;
                 case 4:
-                    obx.buscarElemento(lista, PedirDatos.getInt("Teclee o numero a buscar"));
+                    obx.buscarElemento(lista, PedirDatos.pedirInt("Teclee o numero a buscar"));
                     break;
                 default:
                     System.out.println("Saíndo do programa");
