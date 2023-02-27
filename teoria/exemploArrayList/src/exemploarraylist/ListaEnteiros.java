@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.Iterator;
 
 /**
+ * Colecciones
  *
  * @author dam1
  */
@@ -18,7 +19,7 @@ public class ListaEnteiros {
 
     public void engadir() {
         listaEnteiros.add(2);
-        // listaEnteiros.add("bbb"); // no me deja
+        // listaEnteiros.add("bbb"); // no me deja pq le estoy especificando el tipo?? SI
         listaEnteiros.add(3);
         listaEnteiros.add(5);
         listaEnteiros.add(1);
