@@ -14,6 +14,7 @@ public abstract class FigurasXeometricas {
     
     // constructor para poder crear las figuras con los atributos
     
+
     public FigurasXeometricas(float base, float altura) {
         this.base = base;
         this.altura = altura;

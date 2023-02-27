@@ -4,6 +4,9 @@
  */
 package exemploabstractas;
 
+import exemploabstractas.superClases.FigurasXeometricas;
+import exemploabstractas.interfaces.IDibuxable;
+
 /**
  *
  * @author dam1

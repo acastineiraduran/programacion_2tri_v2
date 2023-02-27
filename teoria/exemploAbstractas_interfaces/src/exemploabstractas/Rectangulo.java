@@ -4,21 +4,24 @@
  */
 package exemploabstractas;
 
+import exemploabstractas.superClases.FigurasXeometricas;
+import exemploabstractas.interfaces.IRotable;
+import exemploabstractas.interfaces.IDibuxable;
+
 /**
- *
+ * quiero crear un rectangulo con todos sus atributos 
+ * 
+ * hacer un no puedo crear un objeto de tipo figura xeometricas pero si me permite 
+ * crear as miñas figuras xeometricas
+ * 
  * @author dam1
  */
-public class Rectangulo extends FigurasXeometricas implements IDibuxable,IRotable{
-
-    // quiero crear un rectangulo con todos sus atributos 
-    /* hacer un no puedo crear un objeto de tipo figura xeometricas pero si me permite 
-    crear as miñas figuras xeometricas*/    
+public class Rectangulo extends FigurasXeometricas implements IDibuxable,IRotable{  
     
     public Rectangulo(float base, float altura) {
         super(base, altura);
     }
 
-// Tienen que ser iguales al de la superclase, por lo que sobre se borra
     @Override
     public float calcularPeri() {
         // throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -32,13 +35,21 @@ public class Rectangulo extends FigurasXeometricas implements IDibuxable,IRotabl
     }
     
 // hay que modificarlos
-
-    @Override
+    /**
+     * Metodo que implementa el metodo dibujar de la interfaz IDibuxable
+     * 
+     * A nivel de compilacion solo hay esa etiqueta para indicar que lo implementa
+     * por primera vez
+     * 
+     */
+    @Override // realmente no esta sobreescribiendo, esta implementando por primer vez
     public void dibuxar() {
         // throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         System.out.println("Dibuxamos o rectangulo");
     }
-
+    /**
+     * Metodo que implementa el metodo rotar de la interfaz IRorable
+     */
     @Override
     public void rotar() {
         // throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

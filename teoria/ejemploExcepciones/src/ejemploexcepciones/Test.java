@@ -11,7 +11,7 @@ import nosaExcepcion.NosaExcepcion;
  *
  * @author dam1
  */
-public class EjemploExcepciones {
+public class Test {
 
     /**
      * @param args the command line arguments
@@ -26,6 +26,10 @@ public class EjemploExcepciones {
 //        System.out.println("Fin do programa");
         
         int num2 = 8, deno2 = 4;
+        /**
+         * si creo mi propia excepcion recordar que tengo que crear el objeto
+         * para poder utilizarlo    
+         */
         try {
             int resultado = num2 / deno2;
             obx.dividirNosaExcepcion_sinElse(num2, resultado); // hay que crear objeto antes de asignarle el tipo

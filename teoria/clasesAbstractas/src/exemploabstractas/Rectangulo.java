@@ -5,15 +5,16 @@
 package exemploabstractas;
 
 /**
- *
+ * quiero crear un rectangulo con todos sus atributos 
+ * 
+ * hacer un no puedo crear un objeto de tipo figura xeometricas pero si me permite 
+ * crear as miñas figuras xeometricas
+ * 
  * @author dam1
  */
 public class Rectangulo extends FigurasXeometricas{
 
-    // quiero crear un rectangulo con todos sus atributos 
-    /* hacer un no puedo crear un objeto de tipo figura xeometricas pero si me permite 
-    crear as miñas figuras xeometricas*/    
-    
+
     public Rectangulo(float base, float altura) {
         super(base, altura);
     }
