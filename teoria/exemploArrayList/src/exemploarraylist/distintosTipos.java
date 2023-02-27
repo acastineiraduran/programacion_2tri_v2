@@ -7,11 +7,11 @@ package exemploarraylist;
 import java.util.ArrayList;
 
 /**
- * Metodos con colecciones que pueden contener datos de distintos tipos
+ * colecciones que pueden contener datos de distintos tipos
  *
  * @author dam1
  */
-public class Metodos {
+public class distintosTipos {
     // TODAS LAS COLECCIONES SON DE OBJTOS Y NO DE DATOS PRIMITIVOS -->??
 
     /**
