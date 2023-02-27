@@ -34,6 +34,7 @@ public class distintosTipos {
 
     /**
      * visualizo los elementos de la coleecion
+     * es la unica forma para visualizar elementos de distintos tipos??
      */
     public void ver() {
         for (int i= 0; i < lista.size(); i++){
