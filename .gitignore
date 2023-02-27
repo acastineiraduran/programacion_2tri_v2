@@ -31,4 +31,5 @@
 /teoria/manejoExcepcionesUndemy/nbproject/private/
 /teoria/manejoExcepcionesUndemy/build/
 /.idea/
-/build/
+# Ignoro todas las carpetas build. con el slash lo borro de la principal
+build
