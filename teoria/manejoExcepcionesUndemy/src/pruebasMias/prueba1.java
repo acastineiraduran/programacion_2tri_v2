@@ -16,7 +16,7 @@ public class prueba1 {
             System.out.println("resultado = " + resultado);
     
         } catch (Exception e){
-            System.out.println(new tratoError("malo"));
+             
         }
     }
     
