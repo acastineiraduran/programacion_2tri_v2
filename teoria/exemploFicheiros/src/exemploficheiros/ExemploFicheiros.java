@@ -4,17 +4,16 @@
  */
 package exemploficheiros;
 
-/**
- *
- * @author dam1
- */
+import java.io.File;
+import lectura.LerFicheiros;
+
 public class ExemploFicheiros {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // si tengo fichero en la misma ruta
+        File f = new File("numeros");
+        LerFicheiros=new LerFicheiros();
+        System.out.println(dato);
     }
     
 }
