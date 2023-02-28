@@ -33,3 +33,4 @@
 # Ignoro todas las carpetas build. con el slash lo borro de la principal
 
 /teoria/ejemploExcepciones/build/
+/teoria/exemploXenerico/build/

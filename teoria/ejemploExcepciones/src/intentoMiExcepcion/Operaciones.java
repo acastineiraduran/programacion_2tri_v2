@@ -17,7 +17,7 @@ public class Operaciones {
     public void raizCuadrada (double radicando, double indice){
         try {
             double resultado = Math.pow(radicando, (1/indice));
-            // System.out.println("resultado = " + resultado);
+            // System.out.println("resultado = " + resultado); // si va arriba se imprimiria eso antes
             excepcionesOperaciones.raizRadicandoNegativo(radicando);
             System.out.println("resultado = " + resultado);
         } catch (MiExcepcion e){
