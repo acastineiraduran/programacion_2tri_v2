@@ -1,37 +1,124 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package lectura;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import eficheiros.Alumno;
+import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ *
+ * @author NSteuerberg
+ */
 public class LerFicheiros {
+    Scanner sc;
     
-    Scanner sc; 
-    
-    public void lerPalarbas(File ficheiro){
+    //Leelo por palabras
+    public void lerPalabras(File ficheiro, String del){
         try {
-            sc = new Scanner(ficheiro); // abro fiche en modo lectura
-            while (sc.hasNext()){// mentres tengamos algo que leer...
-                // ...lo veo y lo visualizo:
+            sc = new Scanner(ficheiro).useDelimiter("\\s*" + del + "\\s*");
+            while(sc.hasNext()){
                 String dato = sc.next();
-                      System.out.println(dato);
+                System.out.println(dato);
             }
-            //sc.close(); 
-            /* no hay problema, leemos y lo cerramos pero si ha
-            problema iria al catch y deharia al fichero abierto*/
-        } catch (FileNotFoundException ex) {
-            System.out.println("erro 1:" + ex.getMessage());
+        }catch (FileNotFoundException ex) {
+            System.out.println("erro 1 " + ex.getMessage());
         }
         finally{
-            sc.close(); // por lo anterior mencionado, lo tengo que poner aqui
+            sc.close();
         }
-        
     }
     
+    //Leerlo por liñas
+    public void lerLiñas(File ficheiro){
+        try {
+            sc = new Scanner(ficheiro);
+            while(sc.hasNext()){
+                String dato = sc.nextLine();
+                System.out.println(dato);
+            }
+        }catch (FileNotFoundException ex) {
+            System.out.println("erro 2 " + ex.getMessage());
+        }
+        finally{
+            sc.close();
+        }
+    }
+    
+    //arrayList
+    public ArrayList<Integer> lerNumero(File ficheiro){
+        int num;
+        //int aux;
+        ArrayList<Integer>lista=new ArrayList<>();
+        try{
+            sc = new Scanner(ficheiro);
+            while(sc.hasNext()){
+                num=sc.nextInt();
+                //aux = Integer.parseInt(num);
+                lista.add(num);
+            }
+        }
+        catch(FileNotFoundException ex){
+            System.out.println("error leer numero"+ex.getMessage());
+        }
+        finally{
+                sc.close();
+        }
+       
+        for(Integer ele:lista){
+            System.out.println(ele);
+        }
+       
+        return lista;
+    }
+    
+    public ArrayList<Integer> lerNumeroDelimitadores(File ficheiro){
+        int num;
+        //int aux;
+        ArrayList<Integer>lista=new ArrayList<>();
+        try{
+            sc = new Scanner(ficheiro).useDelimiter(",");
+            while(sc.hasNext()){
+                num=sc.nextInt();
+                //aux = Integer.parseInt(num);
+                lista.add(num);
+            }
+        }
+        catch(FileNotFoundException ex){
+            System.out.println("error leer numero"+ex.getMessage());
+        }
+        finally{
+                sc.close();
+        }
+       
+        for(Integer ele:lista){
+            System.out.println(ele);
+        }
+       
+        return lista;
+    }
+    
+    public void lerObxecto(File ficheiro){
+        ArrayList<Alumno> lista = new ArrayList();
+        String []aux = new String[2];
+        try{
+            sc = new Scanner(ficheiro);
+            while(sc.hasNextLine()){
+                aux = sc.nextLine().split(", ");
+                lista.add(new Alumno(aux[0], Integer.parseInt(aux[1])));
+            }
+        }catch (FileNotFoundException ex){
+            System.out.println("non se pode ler do ficheiro");
+        }finally{
+            sc.close();
+        }
+        for(Alumno al:lista){
+            System.out.println(al);
+        }
+            
+    }
+    
+    
+    //3º xeito
 }
