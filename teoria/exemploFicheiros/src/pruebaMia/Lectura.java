@@ -4,10 +4,12 @@
  */
 package pruebaMia;
 
+import java.io.File;
+
 /**
  *
  * @author dam1
  */
 public class Lectura {
-    
+    File fichero = new File ("fichero_leer.txt");
 }
