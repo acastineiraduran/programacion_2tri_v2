@@ -4,6 +4,12 @@
  */
 package test;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import teoriaficherosundmy.ManejoArchivos;
 import static teoriaficherosundmy.ManejoArchivos.crearArchivo;
 
@@ -13,7 +19,15 @@ import static teoriaficherosundmy.ManejoArchivos.crearArchivo;
  */
 public class TestManejoArchivos {
     public static void main(String[] args) {
-        var nombreArchivo = "prueba.txt";
-        crearArchivo(nombreArchivo);
-    }
+        var nombreArchivo = "prueba3.txt";
+        // var nombreArchivo = "C:\\prueba.txt";
+        //ManejoArchivos.crearArchivo(nombreArchivo);
+//        ManejoArchivos.anexarArchivo(nombreArchivo, "Hola desde Java");
+//        ManejoArchivos.anexarArchivo(nombreArchivo, "hola");
+
+
+    } 
 }
+
+    
+
