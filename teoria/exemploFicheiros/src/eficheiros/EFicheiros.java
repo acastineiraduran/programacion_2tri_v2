@@ -24,31 +24,30 @@ public class EFicheiros {
          */
         File f = new File(
                 "ficherosNumeros.txt");
-        /**
-         * objeto que sera utilizado por los 2 metodos siguientes
-         */
+        
+        // objeto que sera utilizado por los 2 metodos siguientes
         // LerFicheiros obx = new LerFicheiros();
+        
         /**
          * --Por palabras--
          * lee contenido fichero y cada vez que encuentra una coma lo considera
          * el final de una palabra
          */
 //        obx.lerPalabras(f,",");
+
         /**
          * --Por lineas (creo)--
          * lee tal cual el contenido del fichero
          */
 //        obx.lerLiñas(f);
         
-        /**
-         * --ArrayList--
-         */
+        // ArrayList
 //        File n = new File("numeros2.txt");
 //        LerFicheiros obx = new LerFicheiros();
 //        obx.lerNumero(n);
         
         
-        //arrayList teniendo fichero con comas
+        // arrayList teniendo fichero con comas
 //        File n = new File("numeros3.txt");
 //        LerFicheiros obx = new LerFicheiros();
 //        

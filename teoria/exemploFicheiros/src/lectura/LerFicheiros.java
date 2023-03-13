@@ -125,7 +125,13 @@ public class LerFicheiros {
        
         return lista;
     }
-    
+    /**
+     * Lee el objeto
+     * - aux es una array que ira almacenando String de las lineas que va leyendo
+     * sc. con split() divido las lineas que me llegan cada vez que encontro una coma
+     * - lista.add voy almacenando los objectos Alumno de aux
+     * @param ficheiro 
+     */
     public void lerObxecto(File ficheiro){
         ArrayList<Alumno> lista = new ArrayList();
         String []aux = new String[2];

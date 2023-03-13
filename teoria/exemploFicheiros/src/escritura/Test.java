@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package pruebaMia;
+package escritura;
 
 import escritura.EscribirFicheiros;
 import java.io.File;
@@ -28,14 +28,14 @@ public class Test {
         */
         
         // cambiando al de engadir, en vez de sobreescribir va a engadir
-        LerFicheiros obxLer = new LerFicheiros();
-        obxLer.lerPalabras(f, "\n");
-        System.out.println("");
-        
+//        LerFicheiros obxLer = new LerFicheiros();
+//        obxLer.lerPalabras(f, "\n");
+//        System.out.println("");
+//        
         
         // ahora engadimos en vez de sobreescribir aunque no lo entinedo muy biern
-        es.engadirPalabras(f);
-        obxLer.lerPalabras(f, "\n");
+//        es.engadirPalabras(f);
+//        obxLer.lerPalabras(f, "\n");
     }
 
 }

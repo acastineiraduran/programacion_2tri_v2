@@ -13,8 +13,21 @@ import java.io.File;
 public class Main {
     public static void main(String[] args) {
         File f = new File ("serializado.txt");
-        EscrituraFicheirosSerializados obx = new EscrituraFicheirosSerializados();
-        obx.escribirSeri(f);
+        EscrituraFicheirosSerializados escritura = new EscrituraFicheirosSerializados();
+        //escritura.escribirSeri(f);
+        
+        LecturaFicheirosSerializados lectura = new LecturaFicheirosSerializados();
+        //lectura.lerSerializable(f);
+        //lectura.lerSerializable_intento2(f);
+        
+        // no esta bien, preguntar:
+//        escritura.engadirSeri(f);
+//        lectura.lerSerializable_intento2(f);
+        
+        
+        
+        
+        
     }
     
     

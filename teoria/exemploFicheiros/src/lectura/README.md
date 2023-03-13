@@ -141,9 +141,12 @@ public String toString() {
 }
 ````
 
-3. Almacenamos 
+3. Almacenamos en la arrayList `lista` los objectos `Alumno`
+se van pasando los parametros de la **array** `aux` conforme se leen
 
+se pasaran tantos objetos como lineas ya no??
 ```java
 lista.add(new Alumno(aux[0], Integer.parseInt(aux[1])));
 ```
-lista.add para agregar objetos "Alumno" a ArrayList "lista"
+lista.add para agregar objetos "Alumno" 
+a ArrayList "lista"

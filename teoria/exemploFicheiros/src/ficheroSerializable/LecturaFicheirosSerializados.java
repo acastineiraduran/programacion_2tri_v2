@@ -5,8 +5,10 @@
 package ficheroSerializable;
 
 import escritura.*;
+import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInput;
@@ -18,31 +20,75 @@ import java.io.PrintWriter;
  * @author dam1
  */
 public class LecturaFicheirosSerializados {
+    /*
+    hay que declararlo antes para que lo pueda utilizar en el try y en el catch
+    */
+    ObjectInputStream lec = null;
 
-    FileWriter ou = null; // null para que no apunte a nada
-
-    PrintWriter fich = null;// me coge el "ou" pq quiero hacer lectura y escritura en buffer (va en paquetes)
-
-    public void lerSerializable(File ficheiro) { // recibo el obj dd quiero escribir
+    /**
+     * Leo objetos serizalizados
+     * 
+     * cuando no encuentra ningun objeto me salta al error 5 en vez de darme null
+     * probe con el codigo de nico y pasa lo mismo
+     * @param fich 
+     */
+    public void lerSerializable(File fich) { // recibo el obj dd quiero escribir
         AlumnadoSerializado al = null;
         
         try {
-            ler = new ObjectInputStream (new FileInputStream(fich));
-            al = (AlumnadoSerializado)ler.readObject();
+            this.lec = new ObjectInputStream (new FileInputStream(fich));
+            al = (AlumnadoSerializado)lec.readObject(); // para entrar en while
             while (al!=null){
-                if (al!=null){
-                    System.out.println("");
-                    al = AlumnadoSerializado ler.readObject;
-                }
+                System.out.println(al);
+                al = (AlumnadoSerializado)this.lec.readObject(); // leo los objetos
             }
 
         } catch (ClassNotFoundException ex) {
             System.out.println("erro escritura: " + ex.getMessage());
+        } catch (FileNotFoundException ex){
+            System.out.println("erro 2");
+            ex.getStackTrace();
         } catch (IOException ex){
-            System.out.println("erro 2 " + ex.getMessage());
+            System.out.println("erro 3 " + ex.getStackTrace());
         } finally {
             try {
-                fich.close();
+                this.lec.close();
+            }catch (IOException ex){
+                System.out.println("erro o pechar o fich");
+            }
+                
+        }
+       
+    }
+        /**
+         * realmente no es ningun error, simplemente indica que se ha acabado la
+         * lectura de objetos. para solucionarlo capturamos el siguiente error:
+         * EOFException
+         * @param fich 
+         */
+        public void lerSerializable_intento2(File fich) { // recibo el obj dd quiero escribir
+        AlumnadoSerializado al = null;
+        
+        try {
+            this.lec = new ObjectInputStream (new FileInputStream(fich));
+            al = (AlumnadoSerializado)lec.readObject(); // para entrar en while
+            while (al!=null){
+                System.out.println(al);
+                al = (AlumnadoSerializado)this.lec.readObject(); // leo los objetos
+            }   
+
+        } catch (ClassNotFoundException ex) {
+            System.out.println("erro escritura: " + ex.getMessage());
+        } catch (FileNotFoundException ex){
+            System.out.println("erro 2" +  ex.getMessage());
+        } catch (EOFException ex) {
+            System.out.println("Fin de lectura de objetos");
+        } catch (IOException ex){
+            System.out.println("erro 3 " + ex.getMessage());
+            ex.printStackTrace();
+        } finally {
+            try {
+                this.lec.close();
             }catch (IOException ex){
                 System.out.println("erro o pechar o fich");
             }
@@ -51,20 +97,4 @@ public class LecturaFicheirosSerializados {
        
     }
     
-    public void engadirPalabras (File ficheiro){
-        try {
-            ou = new FileWriter(ficheiro, true);
-            fich = new PrintWriter(ou);
-
-            fich.println("lun++++s"); // escribo
-            fich.println("maertes");
-            fich.println("mercoles");
-
-        } catch (IOException ex) {
-            System.out.println("erro escritura: " + ex.getMessage());
-
-        } finally {
-            fich.close();
-        }
-    }
 }

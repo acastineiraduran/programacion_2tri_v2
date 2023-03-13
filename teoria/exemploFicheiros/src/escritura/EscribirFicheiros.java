@@ -14,42 +14,53 @@ import java.io.PrintWriter;
  * @author dam1
  */
 public class EscribirFicheiros {
+    /**
+     * es necensario inicializarlos antes?????
+     */
 
     FileWriter ou = null; // null para que no apunte a nada
 
     PrintWriter fich = null;// me coge el "ou" pq quiero hacer lectura y escritura en buffer (va en paquetes)
 
     /**
-     * 1.con esto tengo abierto el fichero en modo escritura 2.el puntero esta
-     * apuntando al principio 3.el punterro se me va (al principio?) si exsite
-     * lo destruye si no lo crea 4.para no tener problemas: solucion: si el
-     * fichero no existe lo crea, sino se pone al final para eseguir escribiendo
-     * --tengo que poner un true en el parametro del metodo--
-     *
-     * @param ficheiro
+     * Se crea o se sobreescribe en un fichero dado
+     * 
+     * PrintWriter obtengo objeto de flujo de salida en el fichero, si no lo creo
+     * PrintWriter proporciona metodos para escribir (mejor optimizacion)
+     * @param ficheiro 
      */
     public void escribirPalabras(File ficheiro) { // recibo el obj dd quiero escribir
         try {
             ou = new FileWriter(ficheiro);
+            // ou.write("buenas dias");
             fich = new PrintWriter(ou);
 
             fich.println("lun++++s"); // escribo
             fich.println("maertes");
             fich.println("mercoles");
+            // ou.close();
 
         } catch (IOException ex) {
             System.out.println("erro escritura: " + ex.getMessage());
 
         } finally {
             fich.close();
+
         }
        
     }
+    
+    /**
+     * añade cadenas al fichero sin sobreescribir
+     * al poner el `true` le decimos que ya existe el fichero y que lo añada en vez
+     * de sobreescribir
+     * 
+     * @param ficheiro 
+     */
     public void engadirPalabras (File ficheiro){
         try {
             ou = new FileWriter(ficheiro, true);
             fich = new PrintWriter(ou);
-
             fich.println("lun++++s"); // escribo
             fich.println("maertes");
             fich.println("mercoles");

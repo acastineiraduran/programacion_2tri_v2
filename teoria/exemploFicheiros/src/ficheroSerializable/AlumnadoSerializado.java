@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author dam1
  */
-public class AlumnadoSerializado implements Seri alizable{
+public class AlumnadoSerializado implements Serializable{
     private String nome;
     private int nota;
     
