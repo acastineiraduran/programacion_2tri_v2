@@ -12,12 +12,26 @@ import java.util.logging.Logger;
  * @author NSteuerberg
  */
 public class LerFicheiros {
+    /**
+     * declaramos valor de tipo scanner
+     */
     Scanner sc;
     
-    //Leelo por palabras
+    /**
+     * Lee por palabras
+     * - Scanner(File source) para leer el archivo y useDelimiter() para establecer
+     * delimitador que se utiliza para separa palabras.
+     * - "\\s*" cadena que representa cualquier cantidad de espacios en blanco (ej. tab,
+     * salto linea...)
+     * - hasNext() devuelve true si hay mas palabras y next() lee el contenido por palabra
+     * 
+     * @param ficheiro objeto de tipo File que representa archivo que se va a leer
+     * @param del delimitador(cadena) que se usara para separar las palabras en el archivo
+     */
     public void lerPalabras(File ficheiro, String del){
         try {
             sc = new Scanner(ficheiro).useDelimiter("\\s*" + del + "\\s*");
+            //sc = new Scanner(ficheiro).useDelimiter(del); // prueba
             while(sc.hasNext()){
                 String dato = sc.next();
                 System.out.println(dato);
@@ -30,7 +44,13 @@ public class LerFicheiros {
         }
     }
     
-    //Leerlo por liñas
+    /**
+     * Lee por lineas
+     * le tal cual el contenido del fichero por lo que despues tambien imprime
+     * los espacios en blanco y los saltos de linea
+     * 
+     * @param ficheiro 
+     */
     public void lerLiñas(File ficheiro){
         try {
             sc = new Scanner(ficheiro);
@@ -46,11 +66,18 @@ public class LerFicheiros {
         }
     }
     
-    //arrayList
+    /**
+     * Lee ArrayList
+     * - lista.add(num) va añadiendo en la array "lista" los tipo int que les llega.
+     * - al utilizar nextInt() no guarda los espacios ni enter (daria error de todas creo)
+     * - foreach para que imprima el ArrayList "lista"
+     * @param ficheiro
+     * @return 
+     */
     public ArrayList<Integer> lerNumero(File ficheiro){
         int num;
         //int aux;
-        ArrayList<Integer>lista=new ArrayList<>();
+        ArrayList<Integer> lista=new ArrayList<>();
         try{
             sc = new Scanner(ficheiro);
             while(sc.hasNext()){
